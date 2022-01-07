@@ -109,6 +109,10 @@ article {
     }
 }
 
+main.home {
+    display: none;
+}
+
 .swiperHero {
     @include size(100%, auto);
     >.container {

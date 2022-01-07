@@ -34,6 +34,7 @@
     // loading
     if ($('main').hasClass('home')) {
         $(window).on("load", () => {
+            $('main').fadeIn();
             $('.loading').fadeIn().delay(18000).fadeOut('1000');
         });
     }
