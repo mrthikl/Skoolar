@@ -32,8 +32,10 @@
     }
 
     // loading
-    $(window).on("load", () => {
-        $('.loading').delay(4000).fadeOut('1000');
-    });
+    if ($('main').hasClass('home')) {
+        $(window).on("load", () => {
+            $('.loading').fadeIn().delay(18000).fadeOut('1000');
+        });
+    }
 
 })();

@@ -1,8 +1,9 @@
 // css loading
 .loading {
+    display: none;
     @include size(100%, 100vh);
     @include position(fixed, 0, 0, $z: 1000);
-    img {
+    video {
         @include size;
         object-fit: cover;
     }

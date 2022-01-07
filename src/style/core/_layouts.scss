@@ -66,28 +66,22 @@ body {
     }
 }
 
-main {
-    @media (min-width: $xxs-min) and (max-width: $md-min) {
-        margin-left: var(--width-navigation);
+.container {
+    width: 100%;
+    padding-right: var(--gap);
+    padding-left: var(--gap);
+    margin-right: auto;
+    margin-left: auto;
+    @media (min-width: $xxs-min) {
+        max-width: 540px;
+    }
+    @media (min-width: $xs-min) {
+        max-width: 720px;
+    }
+    @media (min-width: $sm-min) {
+        max-width: 960px;
+    }
+    @media (min-width: $md-min) {
+        max-width: $container-width;
     }
 }
-
-//   .container {
-//     width: 100%;
-//     padding-right: 15px;
-//     padding-left: 15px;
-//     margin-right: auto;
-//     margin-left: auto;
-//     @media (min-width: $xxs-min) {
-//       max-width: 540px;
-//     }
-//     @media (min-width: $xs-min) {
-//       max-width: 720px;
-//     }
-//     @media (min-width: $sm-min) {
-//       max-width: 960px;
-//     }
-//     @media (min-width: $md-min) {
-//       max-width: $container-width;
-//     }
-//   }

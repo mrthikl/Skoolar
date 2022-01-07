@@ -1,10 +1,10 @@
 extends templates/layout
 
 block content 
-    section.swiper.swiperHero
-        .swiper-wrapper
-            +heroSliderItem(`Welcome to <br> Skoolar` , 'Explore Now', 'background-image: url(./img/images/hero3.jpg)')
-            +heroSliderItem(`Welcome to <br> Skoolotel` , 'Explore Now', 'background-image: url(./img/images/hero4.jpg)')
-        .container 
-            .swiper-pagination
-    section(style="height:100vh")
+    main.home
+        section.swiper.swiperHero
+            .swiper-wrapper
+                +heroSliderItem(`Welcome to <br> Skoolar` , 'Explore Now', 'background-image: url(./img/images/hero3.jpg)')
+                +heroSliderItem(`Welcome to <br> Skoolotel` , 'Explore Now', 'background-image: url(./img/images/hero4.jpg)')
+            .container 
+                .swiper-pagination

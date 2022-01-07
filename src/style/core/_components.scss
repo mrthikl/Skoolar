@@ -162,37 +162,39 @@ article {
     }
     @include sm {
         @include size(100%, 100vh);
-        .swiper-slide {
-            padding: 0;
-            .imagebox {
-                &-background {
-                    transform: scale(1.35);
-                }
-            }
-            .textbox {
-                .heading,
-                .btn-hero {
-                    opacity: 0;
-                    transform: translateY(40px);
-                }
-            }
-            &.swiper-slide-active {
+        .swiper-wrapper {
+            .swiper-slide {
+                padding: 0;
                 .imagebox {
                     &-background {
-                        transform: scale(1);
-                        @include transition(transform 20s $cubic 0s);
+                        transform: scale(1.35);
                     }
                 }
                 .textbox {
                     .heading,
                     .btn-hero {
-                        opacity: 1;
-                        transform: none;
-                        transition-delay: 0.3s !important;
-                        @include transition(0.4s $cubic);
+                        opacity: 0;
+                        transform: translateY(40px);
                     }
-                    .btn-hero {
-                        transition-delay: 0.4s !important;
+                }
+                &.swiper-slide-active {
+                    .imagebox {
+                        &-background {
+                            transform: scale(1);
+                            @include transition(transform 20s $cubic 0s);
+                        }
+                    }
+                    .textbox {
+                        .heading,
+                        .btn-hero {
+                            opacity: 1;
+                            transform: none;
+                            transition-delay: 0.3s !important;
+                            @include transition(0.4s $cubic);
+                        }
+                        .btn-hero {
+                            transition-delay: 0.4s !important;
+                        }
                     }
                 }
             }
