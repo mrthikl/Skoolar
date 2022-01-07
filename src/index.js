@@ -31,7 +31,7 @@ if ($(window).width() > 1200) {
 // loading
 if ($('main').hasClass('home')) {
     $(window).on("load", () => {
-        $('main').fadeIn()
+        $('main').css('opacity', '1')
         $('.loading').fadeIn().delay(18000).fadeOut('1000')
     })
 }
