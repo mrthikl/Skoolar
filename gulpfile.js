@@ -1,4 +1,4 @@
-const { src, dest, watch, series, parallel, gulp } = require("gulp");
+const { src, dest, watch, series, parallel, task } = require("gulp");
 const autofixer = require("gulp-autoprefixer");
 const formatHtml = require("gulp-format-html");
 const imagein = require("gulp-imagemin");
@@ -74,8 +74,8 @@ const watchTask = () => {
     );
 };
 
-gulp.task('deploy', () => {
-    return gulp.src("src/**/**/*").pipe(deploy());
+task('deploy', () => {
+    return src("src/**/**/*").pipe(deploy());
 })
 
 
