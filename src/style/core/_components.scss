@@ -163,6 +163,7 @@ article {
     @include sm {
         @include size(100%, 100vh);
         .swiper-slide {
+            padding: 0;
             .imagebox {
                 &-background {
                     transform: scale(1.35);
