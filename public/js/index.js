@@ -5,7 +5,7 @@
     new Swiper('.swiperHero', {
         // Optional parameters
         direction: 'horizontal',
-        loop: true,
+        loop: false,
         autoplay: {
             delay: 5000,
             disableOnInteraction: false
@@ -30,6 +30,10 @@
     if ($(window).width() > 1200) {
         new Rellax(".parallax-image");
     }
-    // $('.parallax-image').Rellax()
+
+    // loading
+    $(window).on("load", () => {
+        $('.loading').delay(4000).fadeOut('1000');
+    });
 
 })();

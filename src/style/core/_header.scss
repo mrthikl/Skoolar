@@ -3,8 +3,8 @@
     @include size(100%, var(--height-header));
     @include flex;
     @include position(fixed, 0, $z: 10);
-    >.container-fluid {
-        @include flex($justify: space-between);
+    >.container {
+        @include flex($justify: flex-end);
     }
     .logo {
         max-height: 48px;
@@ -16,9 +16,23 @@
         &-icon {
             cursor: pointer;
             @include size(32px);
-            >img {
+            >img,
+            svg {
                 @include size;
             }
+            .bell {
+                &.active {
+                    circle {
+                        fill: $orange-cl;
+                    }
+                }
+                circle {
+                    fill: transparent;
+                }
+            }
+        }
+        .btn-header {
+            margin-left: 40px;
         }
     }
 }

@@ -2,7 +2,7 @@ const svgIcon = '<svg class="hero-pagination-item" width="65px" height="65px" vi
 const swiperHero = new Swiper('.swiperHero', {
     // Optional parameters
     direction: 'horizontal',
-    loop: true,
+    loop: false,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false
@@ -27,4 +27,8 @@ const swiperHero = new Swiper('.swiperHero', {
 if ($(window).width() > 1200) {
     var rellax = new Rellax(".parallax-image");
 }
-// $('.parallax-image').Rellax()
+
+// loading
+$(window).on("load", () => {
+    $('.loading').delay(4000).fadeOut('1000')
+})
