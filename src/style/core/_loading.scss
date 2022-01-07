@@ -1,6 +1,6 @@
 // css loading
 .loading {
-    display: none;
+    // display: none;
     @include size(100%, 100vh);
     @include position(fixed, 0, 0, $z: 1000);
     video {

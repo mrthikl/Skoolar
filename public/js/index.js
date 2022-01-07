@@ -35,7 +35,7 @@
     if ($('main').hasClass('home')) {
         $(window).on("load", () => {
             $('main').css('opacity', '1');
-            $('.loading').fadeIn().delay(18000).fadeOut('1000');
+            $('.loading').delay(18000).fadeOut('1000');
         });
     }
 
