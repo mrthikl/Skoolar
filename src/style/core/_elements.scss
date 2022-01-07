@@ -1,0 +1,60 @@
+.hero-pagination-item {
+    transform: scale(0.5);
+    @include transition(transform $t ease);
+    @include size(20px);
+    circle {
+        transform: rotate(-81deg);
+        transform-origin: center;
+        @include transition(stroke $t ease);
+        &:not(.time) {
+            stroke: none;
+            fill: rgba(255, 255, 255, 0.3);
+        }
+        &.time {
+            stroke-dashoffset: 180;
+            stroke-dasharray: 179;
+            stroke: $white-cl;
+            transition-duration: 0s;
+        }
+    }
+}
+
+.textbox {
+    .heading {
+        &.--h1 {
+            @include text(inherit, var(--h1-fs), var(--h1-lh))
+        }
+    }
+}
+
+.btn-header {
+    // padding: 5px;
+    position: relative;
+    cursor: pointer;
+    @include size(30px);
+    @include flex;
+    &::before,
+    &::after {
+        background: $white-cl;
+        content: "";
+        @include size(30px, 1px);
+        @include position(absolute)
+    }
+    &::before {
+        transform: translateY(-5px);
+    }
+    &::after {
+        transform: translateY(5px);
+    }
+}
+
+.btn-hero {
+    padding: 7px 15px;
+    display: inline-block;
+    background: $orange-cl;
+    cursor: pointer;
+    @include br(8px);
+    @include xxs {
+        padding: 16px 24px;
+    }
+}

@@ -1,0 +1,8 @@
+mixin heroSliderItem(title, btn, srcImage)
+    .swiper-slide 
+        .container 
+            .imagebox.parallax-image(data-rellax-speed="-2.5" data-rellax-percentage="0.5")
+                .imagebox-background(style=srcImage)
+            .textbox 
+                h2.heading.--h1!=title
+                .btn-hero=btn

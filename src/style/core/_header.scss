@@ -1,0 +1,24 @@
+.header {
+    position: relative;
+    @include size(100%, var(--height-header));
+    @include flex;
+    @include position(fixed, 0, $z: 10);
+    >.container-fluid {
+        @include flex($justify: space-between);
+    }
+    .logo {
+        max-height: 48px;
+        @include mid(false);
+    }
+    &-social {
+        @include flex;
+        gap: 10px;
+        &-icon {
+            cursor: pointer;
+            @include size(32px);
+            >img {
+                @include size;
+            }
+        }
+    }
+}

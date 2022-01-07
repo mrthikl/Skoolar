@@ -1,0 +1,207 @@
+// css img, button, heading, title, input, elements, components...
+img {
+    max-width: 100%;
+    height: auto;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    &.--center {
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+// colors (tuỳ chỉnh)
+.--white-cl {
+    color: $white-cl;
+}
+
+.--black-cl {
+    color: $black-cl;
+}
+
+.--blue-cl {
+    color: $blue-cl;
+}
+
+// css article (nội dung chi tiết bài viết)
+article {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        // font-family: b; // font bold
+        display: block;
+    }
+    h1 {
+        font-size: var(--h1-fs);
+        line-height: var(--h1-lh);
+        margin: 0 0 0.67rem 0;
+    }
+    h2 {
+        font-size: var(--h2-fs);
+        line-height: var(--h2-lh);
+        margin: 0 0 0.75rem 0;
+    }
+    h3 {
+        font-size: var(--h3-fs);
+        line-height: var(--h3-lh);
+        margin: 0 0 0.83rem 0;
+    }
+    h4 {
+        font-size: var(--h4-fs);
+        line-height: var(--h4-lh);
+        margin: 0 0 1.12rem 0;
+    }
+    h5 {
+        font-size: var(--h5-fs);
+        line-height: var(--h5-lh);
+        margin: 0 0 1.5rem 0;
+    }
+    h6 {
+        font-size: 0.67rem;
+        margin: 0 0 1.67rem 0;
+    }
+    p {
+        margin: 0 0 1.12rem 0;
+    }
+    strong {
+        // font-family: b; // font bold
+    }
+    ol,
+    ul {
+        list-style: initial;
+        padding-left: 18px;
+    }
+    img {
+        display: inline-block;
+        height: auto;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 25px auto;
+    }
+    .video {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+        position: relative;
+        margin: 25px auto;
+        iframe,
+        video {
+            position: absolute;
+            @include size(100%);
+            top: 0;
+            left: 0;
+        }
+    }
+    @include xs {
+        img {
+            margin: 20px auto;
+        }
+    }
+}
+
+.swiperHero {
+    @include size(100%, auto);
+    >.container {
+        position: relative;
+        top: -100%;
+        @include size(100%)
+    }
+    .swiper-wrapper {
+        .swiper-slide {
+            padding-top: calc(var(--height-header) + 40px);
+            padding-bottom: 60px;
+            position: relative;
+            @include flex($justify: flex-start);
+            .imagebox {
+                @include size;
+                @include position(absolute, 0, 0, $z: -1);
+                &-background {
+                    @include transition(transform 20s $cubic 0.5s);
+                    @include bgcenter;
+                    @include size;
+                }
+            }
+            .textbox {
+                .heading {
+                    margin-bottom: 22px;
+                }
+            }
+        }
+    }
+    .swiper-pagination {
+        @include flex;
+        &-bullet {
+            @include size(24px);
+            @include flex;
+            &-active {
+                svg {
+                    transform: scale(1);
+                    circle {
+                        &:not(.time) {
+                            stroke: rgba(255, 255, 255, 0.3);
+                            fill: none;
+                        }
+                        &.time {
+                            stroke-dashoffset: 8;
+                            transition: stroke-dashoffset 5500ms linear 0s, stroke 0.2s ease 0s;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @include sm {
+        @include size(100%, 100vh);
+        .swiper-slide {
+            .imagebox {
+                &-background {
+                    transform: scale(1.35);
+                }
+            }
+            .textbox {
+                .heading,
+                .btn-hero {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+            }
+            &.swiper-slide-active {
+                .imagebox {
+                    &-background {
+                        transform: scale(1);
+                        @include transition(transform 20s $cubic 0s);
+                    }
+                }
+                .textbox {
+                    .heading,
+                    .btn-hero {
+                        opacity: 1;
+                        transform: none;
+                        transition-delay: 0.3s !important;
+                        @include transition(0.4s $cubic);
+                    }
+                    .btn-hero {
+                        transition-delay: 0.4s !important;
+                    }
+                }
+            }
+        }
+        .swiper-pagination {
+            @include size(auto, 100%);
+            flex-direction: column;
+            left: unset;
+            right: 10px;
+            gap: 30px;
+        }
+    }
+}
